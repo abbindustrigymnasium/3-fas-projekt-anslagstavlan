@@ -1,4 +1,5 @@
 <script>
+  //Author Lukas
 	import { Section, News, HeroHeader, HeroBody } from 'flowbite-svelte-blocks';
 	import { Button } from 'flowbite-svelte';
 	import { ArrowRightOutline } from 'flowbite-svelte-icons';

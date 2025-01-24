@@ -1,4 +1,4 @@
-#Gustav Ström
+#Author Gustav Ström
 from supabase import create_client, Client # type: ignore
 from dotenv import load_dotenv # type: ignore
 import os

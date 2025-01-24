@@ -1,4 +1,5 @@
 <script lang="ts">
+    //Author Lukas
     import Navbar from "../../components/Navbar.svelte";
     let companyName: string = "";
     let orgNumber: string = "";

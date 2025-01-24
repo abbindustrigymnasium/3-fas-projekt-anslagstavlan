@@ -1,4 +1,5 @@
 <script lang="ts">
+//Author Beni
 import Navbar from "../../components/Navbar.svelte";
 import { onMount } from 'svelte';  
 interface Project {
@@ -21,7 +22,6 @@ let error: string | null = null;
 let selectedProject: Project | null = null;
 let loading = true;
 
-<<<<<<< Updated upstream
 onMount(async () => {
     loading = true;
     try {
@@ -37,23 +37,6 @@ onMount(async () => {
         loading = false;
     }
 });
-=======
-	let projects: Project[] = [];
-	let error: string | null = null;
-	let selectedProject: Project | null = null;
-	let loading = true;
-	let isModalOpen = false;
-
-	function openProjectModal(project: Project) {
-		selectedProject = project;
-		isModalOpen = true;
-	}
-
-	function closeModal() {
-		isModalOpen = false;
-		selectedProject = null;
-	}
->>>>>>> Stashed changes
 
 </script>
 
@@ -64,7 +47,6 @@ onMount(async () => {
 </div>
 </div>
 
-<<<<<<< Updated upstream
 <div class="p-4">
     {#if loading}
         <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -95,63 +77,3 @@ onMount(async () => {
         <p class="text-center text-gray-600">No projects available</p>
     {/if}
 </div>
-=======
-<div class="p-16">
-	{#if loading}
-		<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 ">
-			{#each Array(6) as _}
-				<div class="animate-pulse rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-					<div class="mb-4 h-4 w-3/4 rounded bg-gray-200"></div>
-					<div class="mb-2 h-3 w-full rounded bg-gray-200"></div>
-					<div class="h-3 w-2/3 rounded bg-gray-200"></div>
-				</div>
-			{/each}
-		</div>
-	{:else if projects.length > 0}
-	
-			<div class="">
-				<p class="text-4xl pb-9 font-bold">Aktiva projekt</p>
-				<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-2 w-fit">
-					{#each projects as project (project.id)}
-						<div
-							class="rounded-lg border border-gray-200 bg-white p-5 shadow-sm cursor-pointer hover:shadow-md transition-shadow"
-							on:click={() => openProjectModal(project)}
-						>
-							<h5 class="mb-3 text-xl font-bold tracking-tight text-gray-900">
-								{project.title}
-							</h5>
-							<p class="text-gray-600">
-								{project.additionalInfo}
-							</p>
-						</div>
-					{/each}
-					
-				</div>
-		
-				
-		</div>
-	{:else}
-		<p class="text-center text-gray-600">No projects available</p>
-	{/if}
-	
-	{#if isModalOpen && selectedProject}
-		<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-			<div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full m-4">
-				<div class="flex justify-between items-center mb-4">
-					<h2 class="text-2xl font-bold">{selectedProject.title}</h2>
-					<button on:click={closeModal} class="text-gray-500 hover:text-gray-700">
-						✕
-					</button>
-				</div>
-				<div class="space-y-4">
-					<p><strong>Company:</strong> {selectedProject.companyName}</p>
-					<p><strong>Time:</strong> {selectedProject.time} hours</p>
-					<p><strong>Project Type:</strong> {selectedProject.projectType}</p>
-					<p><strong>Contact:</strong> {selectedProject.contactPerson}</p>
-					<p><strong>Additional Info:</strong> {selectedProject.additionalInfo}</p>
-				</div>
-			</div>
-		</div>
-	{/if}
-</div>
->>>>>>> Stashed changes

@@ -1,7 +1,7 @@
-#Gustav Ström
+#Author Gustav Ström
 import os # type: ignore
 from dotenv import load_dotenv # type: ignore
-from supabase import create_client, Client # type: ign
+from supabase import create_client, Client # type: ignore
 
 envPath="./.env"
 

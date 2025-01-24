@@ -1,3 +1,4 @@
+#Author Gustav Ström
 #show and remove interest
 from supabase import create_client, Client # type: ignore
 from dotenv import load_dotenv # type: ignore

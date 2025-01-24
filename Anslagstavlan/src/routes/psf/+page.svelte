@@ -1,4 +1,5 @@
 <script lang="ts">
+    //Author Beni
     import Navbar from "../../components/Navbar.svelte";
 
     // Types

@@ -1,4 +1,4 @@
-#Gustav Ström
+#Author Gustav Ström
 
 
 from flask import Flask, render_template, jsonify, request # type: ignore
