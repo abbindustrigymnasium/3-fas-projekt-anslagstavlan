@@ -1,0 +1,267 @@
+<script>
+    //Author Gustav Ström
+    //example functions for sending http requests to the flask endpoints 
+    async function sendAddInterestRequest(projectId, interestData) {
+        const url = `/addInterest/${projectId}`;
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(interestData),
+            });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error from server:', errorData);
+                return { success: false, error: errorData };
+            }
+    
+            const responseData = await response.json();
+            return { success: true, data: responseData };
+        } catch (error) {
+            console.error('Request failed:', error);
+            return { success: false, error: error.message };
+        }
+    }
+    
+  
+  
+  
+    async function fetchAllProjects() {
+    try {
+        const response = await fetch('http://127.0.0.1:5000/displayAllProjects');
+        if (!response.ok) {
+            throw new Error(`API not reachable: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('All projects:', data);
+    } catch (error) {
+        console.error('Error:', error.message);
+    }
+}
+async function filterProjects() {
+  // Define the criteria
+  const criteria = {
+      isTaken: false,
+      //time: 20
+  };
+
+  try {
+      // Send POST request to the '/filterprojects' endpoint
+      const response = await fetch('/filterProjects', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(criteria)
+      });
+
+      // Handle the response
+      if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log('Filtered projects:', data);
+      return data;
+  } catch (error) {
+      console.error('Error filtering projects:', error);
+  }
+}
+
+async function fetchAllProjects() {
+  try {
+      const response = await fetch('http://127.0.0.1:5000/displayAllProjects');
+      if (!response.ok) {
+          throw new Error(`API not reachable: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('All projects:', data);
+  } catch (error) {
+      console.error('Error:', error.message);
+  }
+}
+
+async function filterProjects() {
+  // Define the criteria
+  const criteria = {
+      isTaken: false,
+      //time: 20
+  };
+
+  try {
+      // Send POST request to the '/filterProjects' endpoint
+      const response = await fetch('/filterProjects', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(criteria)
+      });
+
+      // Handle the response
+      if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log('Filtered projects:', data);
+      return data;
+  } catch (error) {
+      console.error('Error filtering projects:', error);
+  }
+}
+
+async function addProject(newProject) {
+  try {
+      // Send POST request to the '/addProjects' endpoint
+      const response = await fetch('/addProjects', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(newProject)
+      });
+
+      // Handle the response
+      if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log('Project added:', data);
+      return data;
+  } catch (error) {
+      console.error('Error adding project:', error);
+  }
+}
+
+// send a payload to a Flask backend
+async function updateProject(projectId, projectData) {
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/update_project/${projectId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(projectData),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to update project: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        console.log("Project updated successfully:", result);
+    } catch (error) {
+        console.error("Error updating project:", error);
+    async function updateProject(projectId, projectData) {
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/update_project/${projectId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(projectData),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to update project: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        console.log("Project updated successfully:", result);
+    } catch (error) {
+        console.error("Error updating project:", error);
+    }
+}  if (error.response) {
+    console.error("Error response:", await error.response.text());
+}
+    }
+
+}
+async function deleteProject(projectId) {
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/delete_project/${projectId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        if (!response.ok) {
+            throw new Error(`Failed to delete project: ${response.statusText}`);
+        }
+        console.log("Project deleted:", projectId);
+    } catch (error) {
+        console.error("Error deleting project:", error);
+    }
+
+    async function updateProject(projectId, projectData) {
+    try {
+        const response = await fetch(`http://127.0.0.1:5000/update_project/${projectId}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(projectData),
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to delete project: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        console.log("Project updated successfully:", result);
+    } catch (error) {
+        console.error("Error updating project:", error);
+    }
+}  if (error.response) {
+    console.error("Error response:", await error.response.text());
+}
+    
+
+}
+
+const projectId=71
+const updatedData={
+    "title": "testee",
+    "isTaken": true,
+    "time": 27
+}
+
+// Example usage
+const newProject = {
+    "isTaken": false,
+    "title": "Web Appliwadwdawdawdcation Development",
+    "companyName": "Tech Innovadawdawdtors Inc.",
+    "time": 20,
+    "projectType": "Softwarawde",
+    "additionalInfo": "Develop a Svelwdawdte and Flask-based web application.",
+    "contactPerson": "Jane Dowaddae"
+}
+const interestData = { elev: 2 };
+
+addProject(newProject);
+filterProjects();
+fetchAllProjects();
+updateProject(projectId, updatedData);
+deleteProject(69)
+/*sendAddInterestRequest(projectId, interestData).then(result => {
+    if (result.success) {
+        console.log('Interest added successfully:', result.data);
+    } else {
+        console.error('Failed to add interest:', result.error);
+    }
+});
+*/
+</script>  
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+  <body>
+    <h1>Hello World!!</h1>
+  </body>
+</html>

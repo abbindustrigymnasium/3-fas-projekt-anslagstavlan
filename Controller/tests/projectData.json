@@ -1,0 +1,54 @@
+{
+    "data":[
+        {
+        "id": 1,
+        "isTaken": false,
+        "title": "Web Application Development",
+        "companyName": "Tech Innovators Inc.",
+        "time": 20,
+        "projectType": "Software",
+        "additionalInfo": "Develop a Svelte and Flask-based web application.",
+        "contactPerson": "Jane Doe"
+    },
+    {
+        "id": 2,
+        "isTaken": true,
+        "title": "Digital Marketing Strategy",
+        "companyName": "MarketMasters LLC",
+        "time": 15,
+        "projectType": "Marketing",
+        "additionalInfo": "Create a 3-month digital marketing plan.",
+        "contactPerson": "John Smith"
+    },
+    {
+        "id": 3,
+        "isTaken": false,
+        "title": "Mobile App Design",
+        "companyName": "AppWorks Studio",
+        "time": 25,
+        "projectType": "Design",
+        "additionalInfo": "Design a UI/UX prototype for a fitness app.",
+        "contactPerson": "Emily Taylor"
+    },
+    {
+        "id": 4,
+        "isTaken": true,
+        "title": "Data Analysis Project",
+        "companyName": "Data Insights Corp.",
+        "time": 30,
+        "projectType": "Analytics",
+        "additionalInfo": "Analyze customer behavior trends using sales data.",
+        "contactPerson": "Michael Brown"
+    },
+    {
+        "id": 5,
+        "isTaken": false,
+        "title": "Cybersecurity Audit",
+        "companyName": "SecureTech Ltd.",
+        "time": 40,
+        "projectType": "Security",
+        "additionalInfo": "Conduct a full security audit of network infrastructure.",
+        "contactPerson": "Sarah Johnson"
+    }
+]
+}
