@@ -1,5 +1,6 @@
 # Anslagstavlan 
-
+## Skapare
+Gustav Ström, Beni och lukas
 ## Syfte
 Anslagstavlan är en webbaserad plattform där företag kan lägga upp projekt som kan genomföras av elever.
 
@@ -17,7 +18,7 @@ UI-rendering och API-anrop till Flask-backend.
 ### Flask
 **Varför Flask?**
 </br>
-Flask är ett lightweight och flexibelt web ramverk för python, dens minimalistiska design gör det lätta att använda och anpassa.
+Flask är ett lightweight och flexibelt web ramverk för python, dens minimalistiska design gör det lätt att använda och anpassa.
 </br>
 </br>
 **Viktiga funktioner i detta projekt:**
@@ -31,7 +32,7 @@ Byggt på PostgreSQL för tillförlitlighet och skalbarhet, inbyggd autentiserin
 </br>
 **Viktiga funktioner i detta projekt:**
 </br>
-Autentisering med mail och microsoft, persistent lagring för användardata
+Autentisering med e-post och Microsoft, persistent lagring för användardata
 
 ### Integrations översikt
 
@@ -53,7 +54,7 @@ Autentisering med mail och microsoft, persistent lagring för användardata
 ### Funktionsspecifikation för controller
 ![bild](https://github.com/user-attachments/assets/ff251987-c52f-41e6-b720-031676270936)
 
-## Setup instruktioner
+## Installationsinstruktioner
 
 ### Krav
 Node.js v22+
@@ -61,7 +62,7 @@ Python 3.8+
 Supabase konto
 
 ### Installering
-1. Klona repostitory
+1. Klona repository
    </br>
  `git clone https://github.com/abbindustrigymnasium/3-fas-projekt-anslagstavlan.git `
 2. Setup av Frontend
@@ -83,5 +84,5 @@ Supabase konto
 ## Vidareutveckling
 **För att förbättra projektets funktionalitet och tillgodose fler användarbehov kan följande vidareutveckling övervägas:**
 </br>
-1. Tilläggning av lärarfunktionalitet
-2. Tilläggning av projektmallar 
+1. Tillägg av lärarfunktionalitet
+2. Tillägg av projektmallar 
